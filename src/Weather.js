@@ -34,24 +34,10 @@ export const Weather = () => {
       {
         weatherData.map((weather, i) => {
           return (
-            <Grid item key={i} md={4}>
+            <Grid justify="center" container item key={i} md={4}>
               <WeatherCard weatherData={weather} />
             </Grid>
           )
-          // return (
-          //   <div key={i} style={styling}>
-          //     <img src={`http://openweathermap.org/img/wn/${weatherInfo.icon}@2x.png`} alt=""/>
-          //     <div>descirption: {weatherInfo.description}</div>
-          //     <div>main: {weatherInfo.main}</div>
-          //     <div>Temp:
-          //       <div>day: {weather.temp.day}</div>
-          //       <div>min: {weather.temp.min}</div>
-          //       <div>max: {weather.temp.max}</div>
-          //       <div>night: {weather.temp.night}</div>
-          //       <div>morn: {weather.temp.morn}</div>
-          //     </div>
-          //   </div>
-          // )
         })
       }
       </Grid>

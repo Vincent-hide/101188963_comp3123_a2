@@ -22,6 +22,7 @@ const useStyles = makeStyles((theme) =>
   createStyles({
     root: {
       maxWidth: 345,
+      marginBottom: theme.spacing(4)
     },
     media: {
       height: 0,
@@ -78,6 +79,7 @@ export default function WeatherCard ({weatherData}) {
 
       <CardContent>
         <Typography variant="h4" color="textSecondary" component="p">
+          Weather Description: <hr />
           {weather[0].description}
         </Typography>
       </CardContent>
