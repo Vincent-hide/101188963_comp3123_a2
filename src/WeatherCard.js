@@ -9,8 +9,11 @@ import {
   Collapse,
   Avatar,
   IconButton,
-  Typography
+  Typography,
+  Divider,
+  Grid
 } from "@material-ui/core"
+
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
@@ -79,7 +82,7 @@ export default function WeatherCard ({weatherData}) {
 
       <CardContent>
         <Typography variant="h4" color="textSecondary" component="p">
-          Weather Description: <hr />
+          Weather Description: <Divider light component='hr'/>
           {weather[0].description}
         </Typography>
       </CardContent>
@@ -104,28 +107,44 @@ export default function WeatherCard ({weatherData}) {
       </CardActions>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
-          <Typography paragraph>Weather Description:</Typography>
-          <Typography paragraph>
-            day: {temp.day}{" "}
-            night: {temp.night}{" "}
-            eve: {temp.eve}{" "}
-            morn: {temp.morn}{" "}
-          </Typography>
-          <Typography paragraph>
-            humidity: {weatherData.humidity}{" "}
-            pressure: {weatherData.pressure}{" "}
-            rain: {weatherData.rain}{" "}
-            wind speed: {weatherData.speed}{" "}
-          </Typography>
-          <Typography paragraph>
+          <Divider light component='hr'/>
+          <Typography variant="h4">Weather Description:</Typography>
+          <Divider light component='hr'/>
+          <Grid container justify='center' alignItems='center'>
+            <Grid container item justify='center'>
+              humidity: {weatherData.humidity}
+            </Grid>
+            <Grid container item justify='center'>
+              pressure: {weatherData.pressure}
+            </Grid>
+            <Grid container item justify='center'>
+              clouds: {weatherData.clouds}
+            </Grid>
+            <Grid container item justify='center'>
+              wind speed: {weatherData.speed}
+            </Grid>
+          </Grid>
+
+          <Divider light component='hr'/>
+          <Typography variant="h4">
             feels like
           </Typography>
-          <Typography>
-            day: {feels_like.day}{" "}
-            night: {feels_like.night}{" "}
-            eve: {feels_like.eve}{" "}
-            morn: {feels_like.morn}{" "}
-          </Typography>
+          <Divider light component='hr'/>
+
+          <Grid container justify='center' alignItems='center'>
+            <Grid container item justify='center'>
+              day: {feels_like.day}
+            </Grid>
+            <Grid container item justify='center'>
+              night: {feels_like.night}
+            </Grid>
+            <Grid container item justify='center'>
+              eve: {feels_like.eve}
+            </Grid>
+            <Grid container item justify='center'>
+              morn: {feels_like.morn}
+            </Grid>
+          </Grid>
         </CardContent>
       </Collapse>
     </Card>
